@@ -195,7 +195,7 @@ def get_rotation_compensate_gravity(gravity, local_g_direction=np.array([0, 1, 0
     gravity_normalized = gravity / np.linalg.norm(gravity, axis=1)[:, None]
     local_gs = np.stack([local_g_direction] * gravity.shape[0], axis=1).T
     dp = dot_product_arr(local_gs, gravity_normalized)
-    flag_arr = np.zeros(dp.shape[0], dtype=np.int)
+    flag_arr = np.zeros(dp.shape[0], dtype=np.int32)
     flag_arr[dp < 0.0] = -1
     qs = quaternion_from_two_vectors(gravity_normalized, local_gs)
     return qs

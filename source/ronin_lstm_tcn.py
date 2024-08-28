@@ -313,7 +313,7 @@ def train(args, **kwargs):
 
 
 def recon_traj_with_preds_global(dataset, preds, ind=None, seq_id=0, type='preds', **kwargs):
-    ind = ind if ind is not None else np.array([i[1] for i in dataset.index_map if i[0] == seq_id], dtype=np.int)
+    ind = ind if ind is not None else np.array([i[1] for i in dataset.index_map if i[0] == seq_id], dtype=np.int32)
 
     if type == 'gt':
         pos = dataset.gt_pos[seq_id][:, :2]
