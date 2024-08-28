@@ -54,8 +54,11 @@ class GlobSpeedSequence(CompiledSequence):
         # Compute the IMU orientation in the Tango coordinate frame.
         ori_q = quaternion.from_float_array(ori)
         rot_imu_to_tango = quaternion.quaternion(*self.info['start_calibration'])
-        init_rotor = init_tango_ori * rot_imu_to_tango * ori_q[0].conj()
-        ori_q = init_rotor * ori_q
+        if self.info['device'] == "apple" or self.info['type'] == "unannotated":
+            ori_q = rot_imu_to_tango.conj() * ori_q
+        else:
+            init_rotor = init_tango_ori * rot_imu_to_tango * ori_q[0].conj()
+            ori_q = init_rotor * ori_q
 
         dt = (ts[self.w:] - ts[:-self.w])[:, None]
         glob_v = (tango_pos[self.w:] - tango_pos[:-self.w]) / dt
