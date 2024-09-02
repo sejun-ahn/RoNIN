@@ -8,14 +8,29 @@
 ### Requirements
 python3, numpy, scipy, pandas, h5py, numpy-quaternion, matplotlib, torch, torchvision, tensorboardX, numba, plyfile, 
 tqdm, scikit-learn
+#### tested environment
+`Ubuntu 22.04`, `python 3.8`, `cudatoolkit 11.8`, `numpy 1.24.3`
+
+Installed `pytorch`,`torchvision`,`torchaudio` using this command
+
+```bash
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+```
+
 
 ### Data 
-The dataset used by this project is collected using an [App for Google Tango Device](https://drive.google.com/file/d/1xJHZ_O-uDSJdESJhZ3Kpy86kWaGX9K2g/view) and an [App for any Android Device](https://drive.google.com/file/d/1BVhfKE6FEL9YRO1WQCoRPgLtVixDbHMt/view), and pre_processed to the data format specified [here](https://ronin.cs.sfu.ca/README.txt) 
-Please refer to our paper for more details on data collection.
 
-You can download the RoNIN dataset from our [project website](http://ronin.cs.sfu.ca/) or [HERE](https://doi.org/10.20383/102.0543). Unfortunately, due to security concerns we were unable to publish 50% of our dataset.
+#### RoNIN Dataset
+- [Project Website](http://ronin.cs.sfu.ca/)
+- [FRDR](https://doi.org/10.20383/102.0543)
 
-Optionally, you can write a custom dataloader (E.g: soure/data_ridi.py) to load a different dataset.
+#### RoNIN Dataset Description
+- [Project Website](https://ronin.cs.sfu.ca/README.txt)
+
+#### Custom iOS Recording Application
+- [VIO] ARKit
+- [IMU] CoreMotion 
+
 
 ### Usage:
 1. Clone the repository.
