@@ -4,8 +4,6 @@ pandas
 h5py
 numpy-quaternion
 matplotlib
-torch
-torchvision
 tensorboardX
 numba
 plyfile
