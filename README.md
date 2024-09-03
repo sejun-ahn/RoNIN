@@ -10,10 +10,18 @@ python3, numpy, scipy, pandas, h5py, numpy-quaternion, matplotlib, torch, torchv
 tqdm, scikit-learn
 #### tested environment
 - `Ubuntu 22.04`, `python 3.8`, `cudatoolkit 11.8`, `numpy 1.24.3`
+    ```bash
+    conda create -n ronin python=3.8
+    conda activate ronin
+    ```
 
 - Installed `pytorch`,`torchvision`,`torchaudio` using this command
     ```bash
     conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+    ```
+- Install requirements with ```requirements.txt```
+    ```bash
+    pip install -r requirements.txt
     ```
 
 
